@@ -22,3 +22,40 @@ To setup haystack and solr:
     ./manage.py build_solr_schema --configure-directory=<CoreConfigDif>
     ./manage.py rebuild_index
     ./bin/solr restart
+
+
+The following env variables are required:
+
+::
+
+    DATABASE_URL
+    DJANGO_SECRET_KEY
+    DJANGO_ADMIN_URL
+    DJANGO_ALLOWED_HOSTS
+    REDIS_URL
+    DJANGO_AWS_ACCESS_KEY_ID
+    DJANGO_AWS_SECRET_ACCESS_KEY
+    DJANGO_AWS_STORAGE_BUCKET_NAME
+    DJANGO_SERVER_EMAIL
+    EMAIL_FROM
+    MAILGUN_API_KEY
+    MAILGUN_DOMAIN
+
+They are currently setup in a .env file in the project directory. In order to use this,
+the setting ``DJANGO_READ_DOT_ENV_FILE`` needs to be set. This was accomplished by editing
+the ``activate`` file of the virtualenv and adding the following code below the
+``VIRTUAL_ENV`` variable.
+
+::
+
+    ...
+    export VIRTUAL_ENV
+
+    DJANGO_READ_DOT_ENV_FILE="True"
+    export DJANGO_READ_DOT_ENV_FILE
+
+    DJANGO_SETTINGS_MODULE="config.settings.production"
+    export DJANGO_SETTINGS_MODULE
+    ...
+
+
