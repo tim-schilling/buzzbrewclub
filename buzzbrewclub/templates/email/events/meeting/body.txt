@@ -1,0 +1,9 @@
+Hi{% if user.username %} {{ user.username}},{% endif %}
+
+This is a reminder that our next monthly meeting is occurring on {{ start|date:"SHORT_DATETIME_FORMAT" }}.
+{% if event.location %}
+
+It will be held at {{ event.location }}.{% endif %}
+
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you from {{ site_name }}!
+{{ site_domain }}{% endblocktrans %}

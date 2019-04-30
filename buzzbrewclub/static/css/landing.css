@@ -1,0 +1,29 @@
+#landing-header-section {
+  background: rgba(0, 0, 0, 0.4) url('/static/images/landing/buzz_banner.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-blend-mode: darken;
+  text-shadow: 0 1px 10px black;
+}
+
+
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+  #landing-header-section {
+    background: rgba(0, 0, 0, 0.4) url('/static/images/landing/buzz_banner_1920.jpg') no-repeat center center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1440px) {
+  #landing-header-section {
+    background: rgba(0, 0, 0, 0.4) url('/static/images/landing/buzz_banner_1440.jpg') no-repeat center center;
+  }
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #landing-header-section {
+    background: rgba(0, 0, 0, 0.4) url('/static/images/landing/buzz_banner_1200.jpg') no-repeat center center;
+  }
+}

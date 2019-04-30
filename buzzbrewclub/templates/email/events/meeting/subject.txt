@@ -1,0 +1,1 @@
+Monthly meeting - {{ start|date:'SHORT_DATETIME_FORMAT' }}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+  {{ block.super }}
+  <link href="{% static 'css/landing.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content_container %}
+  <main role="main">
+    <section id="landing-header-section" class="jumbotron rounded-0">
+      <div class="container text-white">
+        <h1 class="jumbotron-header">Boneyard Union of Zymurgical Zealots</h1>
+        <p class="lead">
+          Founded in 1994, the Boneyard Union of Zymurgical Zealots is one of the oldest homebrew clubs in Illinois.
+        </p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Monthly Meeting Info</h2>
+          <p>
+            The BUZZ club meets on the first Thursday of the month at 7:00pm.
+            If you're unsure of where the meeting is being held post on the
+            forum or email the list.
+          </p>
+          <h5>Upcoming meetings:</h5>
+          <div class="row">
+            {% for meeting in upcoming.meetings %}
+            <div class="col-sm-6">
+              <div class="card m-1">
+                <div class="card-header">
+                  <strong>{{ meeting.date|date:'F jS' }}</strong>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    {{ meeting.start|date:'l @ P T' }}
+                    <br />
+                    {% if meeting.location %}
+                      {% if meeting.location.map_url %}
+                        <a href="{{ meeting.location.map_url }}" target="_blank">
+                          {{ meeting.location.name }}
+                        </a>
+                      {% else %}
+                        {{ meeting.location.name }}
+                      {% endif %}
+                    {% else %}
+                      Location: TBD
+                    {% endif %}
+                    <br />
+                    {% if meeting.topic %}
+                      {{ meeting.topic}}
+                    {% else %}
+                      Topic: TBD
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <p class="alert alert-info">Beginners and new members are always welcome and you do not need to be a student to join, though you must be
+            at least 21 years old to participate in any activities involving alcohol.</p>
+          <p>A meeting typically starts with a discussion of new business including upcoming events and social
+            opportunities. Often there is a technical topic for the month that is also presented at the meeting. This
+            topic may be a brewing technique, a specific style of beer, or a spotlight on a particular brewing ingredient.
+            The meeting always concludes with a sampling of homebrewed beers, meads, and wines that members bring to the
+            meeting. Every brewer has a chance to tell us about what they brought and then receives honest feedback about
+            their creation. Meetings often finish with a tasting of rare or otherwise notable commercial creations.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col">
+              <img class="img-fluid"
+                   src="{% static 'images/landing/buzz_label.png' %}"
+                   alt="Boneyard Union of Zymurgical Zealots Established: 2013" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h2>Membership Info</h2>
+              <p>
+                Membership dues in the BUZZ club are $10 per year. BUZZ membership has many benefits:
+              </p>
+              <ul>
+                <li>The opportunity to interact with a large number of experienced brewers.</li>
+                <li>Constructive feedback about your brewing and the chance to taste a wide range of styles.</li>
+                <li>Participation in bulk purchases in which the members pool their orders for brewing ingredients or equipment and are able to get a substantial discount.</li>
+               </ul>
+              <p>
+                New officers are elected and dues are collected for the coming year in September.  Pay your dues by clicking the "Buy Now" button below (it redirects to Paypal.)  The Paypal amount will be $10.60 to cover our transaction fees.
+              </p>
+              <div class="text-center mb-4">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input name="cmd" type="hidden" value="_s-xclick"> <input name="hosted_button_id" type="hidden" value="QAKDLBUXFEGYA"> <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" type="image"> <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" hidden="" style="display: none !important;"></form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h2>Annual Boneyard Brew Off</h2>
+              <p>
+                Each year we host a homebrew competition. Go <a href="http://buzzbrewclub.org/competition">here</a> to learn the dates, to enter, and to see the winners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock content_container %}

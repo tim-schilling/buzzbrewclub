@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Notifications Settings{% endblock %}
+
+{% block content %}
+  <h1>Notifications Settings</h1>
+  <p>Enabling a setting will subscribe you to email notifications for that particular content.</p>
+  <form class="form" method="post" action="{% url 'notifications:settings_update' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-success">Update</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}

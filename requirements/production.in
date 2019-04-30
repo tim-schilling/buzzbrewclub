@@ -1,0 +1,21 @@
+pytz
+python-slugify
+Pillow
+argon2-cffi
+whitenoise
+redis
+django
+django-environ
+django-model-utils
+django-allauth
+django-crispy-forms
+django-redis
+djangorestframework
+coreapi
+gunicorn
+psycopg2
+django-storages[boto3]
+django-anymail[mailgun]
+python-dateutil
+pysolr
+-e git+https://github.com/tim-schilling/django-machina.git#egg=django-machina

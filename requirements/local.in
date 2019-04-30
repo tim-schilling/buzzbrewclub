@@ -1,0 +1,18 @@
+-r production.in
+
+ipython
+
+Werkzeug
+ipdb
+Sphinx==1.8.4
+psycopg2-binary
+mypy
+pytest
+pytest-sugar
+flake8
+coverage
+factory-boy
+django-debug-toolbar
+django-extensions
+django-coverage-plugin
+pytest-django
