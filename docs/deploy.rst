@@ -84,3 +84,12 @@ Create a .env.gunicorn file with the following settings to support the web appli
     DJANGO_READ_DOT_ENV_FILE="True"
     DJANGO_SETTINGS_MODULE="config.settings.production"
 
+Email Settings
+==============
+
+All accounts are currently setup with the email schilling711+buzz@gmail.com
+
+The email provider is MailGun and dmarc settings are configured at https://us.dmarcian.com
+
+The domain buzzbrew.club is owned by Tim Schilling - schilling711+buzz@gmail.com.
+
