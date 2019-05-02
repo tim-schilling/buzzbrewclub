@@ -75,7 +75,7 @@ class FutureStartFilter(admin.SimpleListFilter):
 
 @admin.register(Event, HappyHour)
 class BaseEventAdmin(admin.ModelAdmin):
-    fields = ['start', 'published', 'location', 'topic', 'notes']
+    fields = ['start', 'published', 'location', 'notes']
     list_display = ['start', 'published', 'location', 'updated']
     list_filter = [FutureStartFilter, 'published']
     ordering = ['start']
@@ -97,6 +97,7 @@ class BaseEventAdmin(admin.ModelAdmin):
 @admin.register(Meeting)
 class MeetingAdmin(BaseEventAdmin):
     inlines = [MinutesInline]
+    fields = BaseEventAdmin.fields + ['topic']
 
 
 @admin.register(Location)
