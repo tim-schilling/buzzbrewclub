@@ -161,6 +161,10 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
     },
     'loggers': {
         'django.request': {
@@ -169,9 +173,8 @@ LOGGING = {
             'propagate': True
         },
         'django.security.DisallowedHost': {
-            'level': 'ERROR',
-            'handlers': ['console', 'mail_admins'],
-            'propagate': True
+            'handlers': ['null'],
+            'propagate': False,
         }
     }
 }
