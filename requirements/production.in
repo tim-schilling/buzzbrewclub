@@ -9,6 +9,7 @@ django-environ
 django-model-utils
 django-allauth
 django-crispy-forms
+django-recaptcha
 django-redis
 djangorestframework
 coreapi
