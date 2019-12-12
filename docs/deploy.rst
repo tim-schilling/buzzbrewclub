@@ -37,7 +37,8 @@ To setup haystack and solr:
     sudo bash ./bin/install_solr_service.sh ../solr-6.6.6.tgz
     sudo systemctl enable solr solr.service                                  # start solr on startup
     sudo su - solr -c "/opt/solr/bin/solr create -c tester -n basic_config"  # create core named 'tester'
-    ./manage.py build_solr_schema --configure-directory=<CoreConfigDif>
+
+    ./manage.py build_solr_schema --configure-directory=/var/solr/tester/conf
     ./manage.py rebuild_index
     sudo service solr restart
 
