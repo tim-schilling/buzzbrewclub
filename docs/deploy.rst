@@ -46,18 +46,20 @@ The following env variables are required:
 
 ::
 
+    RECAPTCHA_PUBLIC_KEY
+    RECAPTCHA_PRIVATE_KEY
     DATABASE_URL
-    DJANGO_SECRET_KEY
     DJANGO_ADMIN_URL
     DJANGO_ALLOWED_HOSTS
-    REDIS_URL
     DJANGO_AWS_ACCESS_KEY_ID
     DJANGO_AWS_SECRET_ACCESS_KEY
     DJANGO_AWS_STORAGE_BUCKET_NAME
+    DJANGO_SECRET_KEY
     DJANGO_SERVER_EMAIL
     EMAIL_FROM
     MAILGUN_API_KEY
     MAILGUN_DOMAIN
+    REDIS_URL
 
 They are currently setup in a .env file in the project directory. In order to use this,
 the setting ``DJANGO_READ_DOT_ENV_FILE`` needs to be set. This was accomplished by editing
@@ -93,3 +95,6 @@ The email provider is MailGun and dmarc settings are configured at https://us.dm
 
 The domain buzzbrew.club is owned by Tim Schilling - schilling711+buzz@gmail.com.
 
+Captcha Settings
+================
+These settings are currently configured by schillingt@better-simple.com

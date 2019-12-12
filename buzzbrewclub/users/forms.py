@@ -1,6 +1,11 @@
+from django.forms import Form
 from django.contrib.auth import get_user_model, forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Invisible
+
 
 User = get_user_model()
 
@@ -29,3 +34,11 @@ class UserCreationForm(forms.UserCreationForm):
             return username
 
         raise ValidationError(self.error_messages["duplicate_username"])
+
+
+class CaptchaSignupForm(Form):
+    captcha = ReCaptchaField(widget=ReCaptchaV2Invisible, label="")
+
+    def signup(self, request, user):
+        """ Required, or else it throws deprecation warnings """
+        pass

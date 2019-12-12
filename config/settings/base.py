@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
     'mptt',
     'haystack',
     'widget_tweaks',
+    'captcha',
 
     # Machina apps
     'machina',
@@ -230,6 +231,7 @@ TEMPLATES = [
                 'machina.core.context_processors.metadata',
                 # Local
                 'buzzbrewclub.contrib.sites.context_processors.site',
+                'buzzbrewclub.context_processors.project_settings',
             ],
         },
     },
@@ -286,6 +288,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_ADAPTER = 'buzzbrewclub.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = 'buzzbrewclub.users.adapters.SocialAccountAdapter'
+ACCOUNT_SIGNUP_FORM_CLASS = "buzzbrewclub.users.forms.CaptchaSignupForm"
 
 
 # Machina
@@ -315,3 +318,8 @@ HAYSTACK_CONNECTIONS = {
         'ADMIN_URL': 'http://127.0.0.1:8983/solr/admin/cores'
     },
 }
+
+
+# Google Captcha
+RECAPTCHA_PUBLIC_KEY = env.str('RECAPTCHA_PUBLIC_KEY', '')
+RECAPTCHA_PRIVATE_KEY = env.str('RECAPTCHA_PRIVATE_KEY', '')

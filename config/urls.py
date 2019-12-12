@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.views import defaults as default_views
 
 from machina import urls as machina_urls
+from buzzbrewclub.allauth import password_reset_view
 
 
 urlpatterns = [
@@ -18,6 +19,7 @@ urlpatterns = [
         'users/',
         include('buzzbrewclub.users.urls', namespace='users'),
     ),
+    path("accounts/password/reset/", password_reset_view, name="account_reset_password"),
     path('accounts/', include('allauth.urls')),
     path(
         'notifications/',
