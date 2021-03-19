@@ -5,56 +5,139 @@
 #    pip-compile --output-file=requirements/production.txt requirements/production.in
 #
 -e git+https://github.com/tim-schilling/django-machina.git#egg=django-machina
+    # via -r production.in
 argon2-cffi==19.2.0
-boto3==1.10.37            # via django-storages
-botocore==1.13.37         # via boto3, s3transfer
-certifi==2019.11.28       # via requests
-cffi==1.13.2              # via argon2-cffi
-chardet==3.0.4            # via requests
+    # via -r production.in
+boto3==1.10.37
+    # via django-storages
+botocore==1.13.37
+    # via
+    #   boto3
+    #   s3transfer
+certifi==2019.11.28
+    # via requests
+cffi==1.13.2
+    # via argon2-cffi
+chardet==3.0.4
+    # via requests
 coreapi==2.3.3
-coreschema==0.0.4         # via coreapi
-defusedxml==0.6.0         # via python3-openid
+    # via -r production.in
+coreschema==0.0.4
+    # via coreapi
+defusedxml==0.6.0
+    # via python3-openid
 django-allauth==0.40.0
+    # via -r production.in
 django-anymail[mailgun]==7.0.0
+    # via -r production.in
 django-crispy-forms==1.8.1
+    # via -r production.in
 django-environ==0.4.5
+    # via -r production.in
 django-haystack==2.8.1
-django-js-asset==1.2.2    # via django-mptt
+    # via django-machina
+django-js-asset==1.2.2
+    # via django-mptt
 django-model-utils==4.0.0
+    # via -r production.in
 django-mptt==0.10.0
+    # via django-machina
 django-recaptcha==2.0.5
+    # via -r production.in
 django-redis==4.10.0
+    # via -r production.in
 django-storages[boto3]==1.8
+    # via -r production.in
 django-widget-tweaks==1.4.5
+    # via django-machina
 django==2.2.8
+    # via
+    #   -r production.in
+    #   django-allauth
+    #   django-anymail
+    #   django-haystack
+    #   django-machina
+    #   django-model-utils
+    #   django-mptt
+    #   django-recaptcha
+    #   django-redis
+    #   django-storages
 djangorestframework==3.10.3
-docutils==0.15.2          # via botocore
+    # via -r production.in
+docutils==0.15.2
+    # via botocore
 gunicorn==20.0.4
-idna==2.8                 # via requests
-itypes==1.1.0             # via coreapi
-jinja2==2.10.3            # via coreschema
-jmespath==0.9.4           # via boto3, botocore
+    # via -r production.in
+idna==2.8
+    # via requests
+itypes==1.1.0
+    # via coreapi
+jinja2==2.10.3
+    # via coreschema
+jmespath==0.9.4
+    # via
+    #   boto3
+    #   botocore
 markdown2==2.3.8
-markupsafe==1.1.1         # via jinja2
-oauthlib==3.1.0           # via requests-oauthlib
-pillow==6.2.1
+    # via django-machina
+markupsafe==1.1.1
+    # via jinja2
+oauthlib==3.1.0
+    # via requests-oauthlib
+pillow==8.1.1
+    # via
+    #   -r production.in
+    #   django-machina
 psycopg2==2.8.4
-pycparser==2.19           # via cffi
+    # via -r production.in
+pycparser==2.19
+    # via cffi
 pysolr==3.8.1
+    # via -r production.in
 python-dateutil==2.8.0
+    # via
+    #   -r production.in
+    #   botocore
 python-slugify==4.0.0
-python3-openid==3.1.0     # via django-allauth
+    # via -r production.in
+python3-openid==3.1.0
+    # via django-allauth
 pytz==2019.3
+    # via
+    #   -r production.in
+    #   django
 redis==3.3.11
-requests-oauthlib==1.3.0  # via django-allauth
-requests==2.22.0          # via coreapi, django-allauth, django-anymail, pysolr, requests-oauthlib
-s3transfer==0.2.1         # via boto3
-six==1.13.0               # via argon2-cffi, django-anymail, python-dateutil
-sqlparse==0.3.0           # via django
-text-unidecode==1.3       # via python-slugify
-uritemplate==3.0.0        # via coreapi
-urllib3==1.25.7           # via botocore, requests
+    # via
+    #   -r production.in
+    #   django-redis
+requests-oauthlib==1.3.0
+    # via django-allauth
+requests==2.22.0
+    # via
+    #   coreapi
+    #   django-allauth
+    #   django-anymail
+    #   pysolr
+    #   requests-oauthlib
+s3transfer==0.2.1
+    # via boto3
+six==1.13.0
+    # via
+    #   argon2-cffi
+    #   django-anymail
+    #   python-dateutil
+sqlparse==0.3.0
+    # via django
+text-unidecode==1.3
+    # via python-slugify
+uritemplate==3.0.0
+    # via coreapi
+urllib3==1.25.7
+    # via
+    #   botocore
+    #   requests
 whitenoise==5.0
+    # via -r production.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
