@@ -62,7 +62,8 @@ django==2.2.18
     #   django-recaptcha
     #   django-redis
     #   django-storages
-djangorestframework==3.10.3
+    #   djangorestframework
+djangorestframework==3.11.2
     # via -r production.in
 docutils==0.15.2
     # via botocore
