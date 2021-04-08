@@ -84,7 +84,7 @@ markupsafe==1.1.1
     # via jinja2
 oauthlib==3.1.0
     # via requests-oauthlib
-pillow==6.2.1
+pillow==8.1.1
     # via
     #   -r production.in
     #   django-machina
