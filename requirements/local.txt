@@ -50,7 +50,7 @@ django-coverage-plugin==1.6.0
     # via -r local.in
 django-crispy-forms==1.8.1
     # via -r production.in
-django-debug-toolbar==2.1
+django-debug-toolbar==2.2.1
     # via -r local.in
 django-environ==0.4.5
     # via -r production.in
