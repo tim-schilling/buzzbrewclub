@@ -126,7 +126,7 @@ jmespath==0.9.4
     # via
     #   boto3
     #   botocore
-markdown2==2.3.8
+markdown2==2.4.0
     # via django-machina
 markupsafe==1.1.1
     # via jinja2
