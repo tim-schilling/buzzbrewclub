@@ -72,7 +72,7 @@ django-storages[boto3]==1.8
     # via -r production.in
 django-widget-tweaks==1.4.5
     # via django-machina
-django==2.2.20
+django==2.2.24
     # via
     #   -r production.in
     #   django-allauth
