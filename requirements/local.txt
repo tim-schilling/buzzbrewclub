@@ -165,7 +165,7 @@ psycopg2==2.8.4
     # via -r production.in
 ptyprocess==0.6.0
     # via pexpect
-py==1.8.0
+py==1.10.0
     # via pytest
 pycodestyle==2.5.0
     # via flake8
