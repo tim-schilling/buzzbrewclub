@@ -42,7 +42,7 @@ decorator==4.4.1
     #   traitlets
 defusedxml==0.6.0
     # via python3-openid
-django==2.2.24
+django==2.2.26
     # via
     #   -r production.in
     #   django-allauth
