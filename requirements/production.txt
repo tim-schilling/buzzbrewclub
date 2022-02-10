@@ -26,7 +26,7 @@ coreschema==0.0.4
     # via coreapi
 defusedxml==0.6.0
     # via python3-openid
-django==2.2.26
+django==2.2.27
     # via
     #   -r production.in
     #   django-allauth
