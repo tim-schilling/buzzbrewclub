@@ -171,6 +171,8 @@ pluggy==1.0.0
     # via pytest
 prompt-toolkit==3.0.28
     # via ipython
+psycopg2==2.8.6
+    # via -r requirements/production.in
 psycopg2-binary==2.9.3
     # via
     #   -r requirements/local.in

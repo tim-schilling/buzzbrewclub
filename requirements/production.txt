@@ -97,6 +97,8 @@ pillow==9.0.1
     # via
     #   -r requirements/production.in
     #   django-machina
+psycopg2==2.8.6
+    # via -r requirements/production.in
 psycopg2-binary==2.9.3
     # via -r requirements/production.in
 pycparser==2.21
