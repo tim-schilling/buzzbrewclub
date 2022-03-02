@@ -200,6 +200,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
 TEMPLATES = [
     {
+        "APP_DIRS": True,
         # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
@@ -211,12 +212,6 @@ TEMPLATES = [
         'OPTIONS': {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
             'debug': DEBUG,
-            # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
-            ],
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             'context_processors': [
                 'django.template.context_processors.debug',

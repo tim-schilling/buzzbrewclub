@@ -14,9 +14,9 @@ django-redis
 djangorestframework
 coreapi
 gunicorn
-psycopg2
+psycopg2==2.8.6
 django-storages[boto3]
 django-anymail[mailgun]
 python-dateutil
 pysolr
--e git+https://github.com/tim-schilling/django-machina.git#egg=django-machina
+git+https://github.com/tim-schilling/django-machina.git#egg=django-machina

@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements/production.txt requirements/production.in
 #
--e git+https://github.com/tim-schilling/django-machina.git#egg=django-machina
-    # via -r requirements/production.in
 argon2-cffi==21.3.0
     # via -r requirements/production.in
 argon2-cffi-bindings==21.2.0
@@ -59,6 +57,8 @@ django-haystack==3.1.1
     # via django-machina
 django-js-asset==2.0.0
     # via django-mptt
+django-machina @ git+https://github.com/tim-schilling/django-machina.git
+    # via -r requirements/production.in
 django-model-utils==4.2.0
     # via -r requirements/production.in
 django-mptt==0.13.4
@@ -97,7 +97,7 @@ pillow==9.0.1
     # via
     #   -r requirements/production.in
     #   django-machina
-psycopg2==2.9.3
+psycopg2==2.8.6
     # via -r requirements/production.in
 pycparser==2.21
     # via cffi

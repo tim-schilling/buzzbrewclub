@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements/local.txt requirements/local.in
 #
--e git+https://github.com/tim-schilling/django-machina.git#egg=django-machina
-    # via -r requirements/production.in
 alabaster==0.7.12
     # via sphinx
 appnope==0.1.2
@@ -87,6 +85,8 @@ django-haystack==3.1.1
     # via django-machina
 django-js-asset==2.0.0
     # via django-mptt
+django-machina @ git+https://github.com/tim-schilling/django-machina.git
+    # via -r requirements/production.in
 django-model-utils==4.2.0
     # via -r requirements/production.in
 django-mptt==0.13.4
@@ -171,7 +171,7 @@ pluggy==1.0.0
     # via pytest
 prompt-toolkit==3.0.28
     # via ipython
-psycopg2==2.9.3
+psycopg2==2.8.6
     # via -r requirements/production.in
 psycopg2-binary==2.9.3
     # via -r requirements/local.in
