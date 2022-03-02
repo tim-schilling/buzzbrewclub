@@ -1,4 +1,6 @@
 
+from django.conf import settings
+from django.shortcuts import redirect
 from django.utils import timezone
 from django.views.generic import TemplateView
 
@@ -37,6 +39,10 @@ class LandingView(TemplateView):
             recent_posts=recent_posts,
             upcoming=upcoming,
             **kwargs)
+
+
+def latest_water_report(request):
+    return redirect(settings.STATIC_URL + "assets/water_reports/2022.pdf")
 
 
 landing_view = LandingView.as_view()

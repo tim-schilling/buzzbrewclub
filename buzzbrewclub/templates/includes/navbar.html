@@ -11,6 +11,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'forum:index' %}">Forum</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" target="_blank" href="{% url 'dashboard:water_report' %}">Water Report</a>
+      </li>
       {% if request.user.is_authenticated %}
         <li class="nav-item">
           {# URL provided by django-allauth/account/urls.py #}
