@@ -80,5 +80,10 @@ Deployment
 The following details how to deploy this application.
 
 
+1. ``ssh root@www.buzzbrew.club``
+2. ``cd webapps/buzzbrewclub``
+3. ``git pull origin main``
+4. ``sudo service nginx restart``
+
 
 
