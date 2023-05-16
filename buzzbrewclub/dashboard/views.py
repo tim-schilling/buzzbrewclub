@@ -42,7 +42,7 @@ class LandingView(TemplateView):
 
 
 def latest_water_report(request):
-    return redirect(settings.STATIC_URL + "assets/water_reports/2022.pdf")
+    return redirect(settings.STATIC_URL + "assets/water_reports/2023.pdf")
 
 
 landing_view = LandingView.as_view()
