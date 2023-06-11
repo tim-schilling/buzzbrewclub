@@ -15,12 +15,12 @@ class TestUserCreationForm:
         form = UserCreationForm(
             {
                 "username": proto_user.username,
-                "password1": proto_user._password,
-                "password2": proto_user._password,
+                "password1": "H0-#nt3r2",
+                "password2": "H0-#nt3r2",
             }
         )
 
-        assert form.is_valid()
+        assert form.is_valid(), str(form.errors)
         assert form.clean_username() == proto_user.username
 
         # Creating a user.
@@ -31,8 +31,8 @@ class TestUserCreationForm:
         form = UserCreationForm(
             {
                 "username": proto_user.username,
-                "password1": proto_user._password,
-                "password2": proto_user._password,
+                "password1": "H0-#nt3r2",
+                "password2": "H0-#nt3r2",
             }
         )
 
