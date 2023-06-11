@@ -9,19 +9,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'forum:index' %}">Forum</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" target="_blank" href="{% url 'dashboard:water_report' %}">Water Report</a>
       </li>
       {% if request.user.is_authenticated %}
         <li class="nav-item">
-          {# URL provided by django-allauth/account/urls.py #}
-          <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+          <a class="nav-link" target="_blank" href="https://sites.google.com/view/equipmentlibrary/home">{% trans "Equipment Library" %}</a>
         </li>
-        <li class="nav-item">
-          {# URL provided by django-allauth/account/urls.py #}
-          <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+      {% endif %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="communityNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Community
+        </a>
+        <div class="dropdown-menu" aria-labelledby="communityNavbarDropdown">
+          <a class="dropdown-item" href="{% url 'forum:index' %}">Forum</a>
+          <a class="dropdown-item" target="_blank" href="https://www.facebook.com/groups/buzzbrewclub">Facebook</a>
+          <a class="dropdown-item" href="mailto:beer@buzzbrew.club">Contact B.U.Z.Z.</a>
+        </div>
+      </li>
+      {% if request.user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="accountNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="accountNavbarDropdown">
+            <a class="dropdown-item" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+            <a class="dropdown-item" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+          </div>
         </li>
       {% else %}
         <li class="nav-item">
@@ -33,12 +46,6 @@
           <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
         </li>
       {% endif %}
-      <li class="nav-item">
-        <a class="nav-link" href="mailto:beer@buzzbrew.club">Contact B.U.Z.Z.</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" target="_blank" href="https://www.facebook.com/groups/buzzbrewclub">Facebook</a>
-      </li>
     </ul>
     <form class="form-inline my-2 ml-3 my-lg-0" role="search" action="{% url 'forum_search:search' %}">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
