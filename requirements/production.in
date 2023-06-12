@@ -4,7 +4,7 @@ Pillow
 argon2-cffi
 whitenoise
 redis
-django<3.0.0
+django
 django-environ
 django-model-utils
 django-allauth
@@ -13,11 +13,12 @@ django-recaptcha
 django-redis
 djangorestframework
 coreapi
+crispy-bootstrap4
 gunicorn
-psycopg2==2.8.6
+psycopg2
 psycopg2-binary
 django-storages[boto3]
 django-anymail[mailgun]
 python-dateutil
-pysolr
+pysolr==3.10.0b1
 git+https://github.com/tim-schilling/django-machina.git#egg=django-machina

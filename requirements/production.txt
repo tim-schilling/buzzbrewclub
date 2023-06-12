@@ -8,8 +8,12 @@ argon2-cffi==21.3.0
     # via -r requirements/production.in
 argon2-cffi-bindings==21.2.0
     # via argon2-cffi
+asgiref==3.7.2
+    # via django
 async-timeout==4.0.2
     # via redis
+backports-zoneinfo==0.2.1
+    # via django
 boto3==1.26.151
     # via django-storages
 botocore==1.29.151
@@ -28,17 +32,21 @@ coreapi==2.3.3
     # via -r requirements/production.in
 coreschema==0.0.4
     # via coreapi
+crispy-bootstrap4==2022.1
+    # via -r requirements/production.in
 cryptography==41.0.1
     # via
     #   django-anymail
     #   pyjwt
 defusedxml==0.7.1
     # via python3-openid
-django==2.2.28
+django==4.2.2
     # via
     #   -r requirements/production.in
+    #   crispy-bootstrap4
     #   django-allauth
     #   django-anymail
+    #   django-crispy-forms
     #   django-haystack
     #   django-js-asset
     #   django-machina
@@ -51,8 +59,10 @@ django-allauth==0.54.0
     # via -r requirements/production.in
 django-anymail[mailgun]==10.0
     # via -r requirements/production.in
-django-crispy-forms==1.14.0
-    # via -r requirements/production.in
+django-crispy-forms==2.0
+    # via
+    #   -r requirements/production.in
+    #   crispy-bootstrap4
 django-environ==0.10.0
     # via -r requirements/production.in
 django-haystack==3.2.1
@@ -61,7 +71,7 @@ django-js-asset==2.0.0
     # via django-mptt
 django-machina @ git+https://github.com/tim-schilling/django-machina.git
     # via -r requirements/production.in
-django-model-utils==4.2.0
+django-model-utils==4.3.1
     # via -r requirements/production.in
 django-mptt==0.14.0
     # via django-machina
@@ -69,11 +79,11 @@ django-recaptcha==3.0.0
     # via -r requirements/production.in
 django-redis==5.2.0
     # via -r requirements/production.in
-django-storages[boto3]==1.12.3
+django-storages[boto3]==1.13.2
     # via -r requirements/production.in
 django-widget-tweaks==1.4.12
     # via django-machina
-djangorestframework==3.13.1
+djangorestframework==3.14.0
     # via -r requirements/production.in
 gunicorn==20.1.0
     # via -r requirements/production.in
@@ -97,7 +107,7 @@ pillow==9.5.0
     # via
     #   -r requirements/production.in
     #   django-machina
-psycopg2==2.8.6
+psycopg2==2.9.6
     # via -r requirements/production.in
 psycopg2-binary==2.9.6
     # via -r requirements/production.in
@@ -105,7 +115,7 @@ pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.7.0
     # via django-allauth
-pysolr==3.9.0
+pysolr==3.10.0b1
     # via -r requirements/production.in
 python-dateutil==2.8.2
     # via
@@ -118,7 +128,6 @@ python3-openid==3.2.0
 pytz==2023.3
     # via
     #   -r requirements/production.in
-    #   django
     #   djangorestframework
 redis==4.5.5
     # via
@@ -141,6 +150,8 @@ sqlparse==0.4.4
     # via django
 text-unidecode==1.3
     # via python-slugify
+typing-extensions==4.6.3
+    # via asgiref
 uritemplate==4.1.1
     # via coreapi
 urllib3==1.26.16
