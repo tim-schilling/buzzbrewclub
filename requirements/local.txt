@@ -201,7 +201,7 @@ pygments==2.15.1
     #   sphinx
 pyjwt[crypto]==2.7.0
     # via django-allauth
-pysolr==3.9.0
+pysolr==3.10.0b1
     # via -r requirements/production.in
 pytest==7.3.2
     # via
